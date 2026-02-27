@@ -1,9 +1,9 @@
 import moizImg from '../assets/images/Moiz.png';
-import murtazaImg from '../assets/images/Murtaza.png'; // Capitalized M based on About.jsx
-import mudrekaImg from '../assets/images/Mudreka.png'; // Capitalized M
-import irfanImg from '../assets/images/Irfan.png'; // Capitalized I
+import murtazaImg from '../assets/images/murtaza.png'; 
+import mudrekaImg from '../assets/images/mudreka.png'; 
+import irfanImg from '../assets/images/irfan.png'; 
 import waheedImg from '../assets/images/muhammad1.png'; 
-import nadeemImg from '../assets/images/Muhammad.png'; // Based on About.jsx (nadeemImg was 'Muhammad.png')
+import nadeemImg from '../assets/images/muhammad.png'; 
 
 export const teamData = [
   {

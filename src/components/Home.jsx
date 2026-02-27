@@ -56,15 +56,15 @@ export default function Home() {
                         <h2 className="businesses">Our Businesses</h2>
                         <div className="card-scroll-container">
                             <Card img={sw} description="From Engineering & Design to Fabrication and Material installation, We have contrive astounding projects across UAE. Our some pull off sectors comprised Oil & Gas, Metro, Bridges, Water desalination." title="STRUCTURAL" ctaText="View Project"
-                                href="/projects/vogue-steel"
+                                href="/completed"
                                 badge="Featured"
                                 tags={["Industrial", "Turnkey", "UAE"]} alt="Structural Projects" />
                             <Card img={hqb} description="From our first small project in Abu Dhabi in 1996, we have engineered some of the most prestigious marvels in UAE & GCC. From Al-Dar HQ, Abu Dhabi to Burj Khalifa, Dubai." title="ARCHITECTURAL" ctaText="View Project"
-                                href="/projects/vogue-steel"
+                                href="/completed"
                                 badge="Featured"
                                 tags={["Industrial", "Turnkey", "UAE"]} alt="Architectural Marvels" />
                             <Card img={mfc} description="As one of the leading metal service centers in UAE, we specialize in a wide array of services by using some of the world’s best and most sophisticated machinery and expert personnel." title="METAL SERVICES" ctaText="View Project"
-                                href="/projects/vogue-steel"
+                                href="/completed"
                                 badge="Featured"
                                 tags={["Industrial", "Turnkey", "UAE"]} alt="Metal Services" />
                         </div>

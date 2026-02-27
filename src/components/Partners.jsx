@@ -1,6 +1,6 @@
-// src/components/Partners.js
+// src/components/Partners.jsx
 import React, { useRef, useState, useEffect, forwardRef } from 'react';
-import './partners.css';
+import './Partners.css';
 import i1 from "../assets/images/adnoc.png";
 import i2 from "../assets/images/aldar.png";
 import i3 from "../assets/images/emkan.png";

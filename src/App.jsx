@@ -5,7 +5,7 @@ import Home from './components/Home';
 import About from './components/About'; // Assuming you'll create About.js in components folder
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Partners from './components/partnes';
+import Partners from './components/Partners';
 import Header from './components/Header';
 import i1 from "./assets/images/adnoc.png"
 import i2 from "./assets/images/aldar.png"
