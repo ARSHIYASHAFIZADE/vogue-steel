@@ -1,0 +1,72 @@
+:root {
+  --accent: #e11d48;
+  --muted: #9aa4b2;
+}
+
+.stats-section-fixed {
+  position: relative; /* Normal flow */
+  /* top/left removed */
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-start; /* Left align stats to match text */
+  pointer-events: auto;
+  margin-bottom: 20px; /* Space before heading (Reduced) */
+  padding-top: 0;
+  padding-left: 0;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Equal Width Columns */
+  gap: 20px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  width: 100%; /* Full width to fill usage */
+  max-width: 100%;
+}
+
+.stat-item {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  height: 100%; /* Ensure they all match the grid row height */
+}
+
+.stat-value {
+  color: #000 !important; /* Force Dark text */
+  font-size: 1.8rem; /* Larger again for impact */
+  font-weight: 300; /* Thin fashionable number */
+}
+
+.stat-label {
+  color: #333 !important; /* Force Dark Gray */
+  font-size: 0.7rem;
+  margin-top: 6px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.stat-icon {
+  display: none; /* Minimalist look, remove icons? Or keep them small. Let's hide them for Vogue style cleanliness. */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+    width: 95%;
+    bottom: 10px;
+  }
+  .stat-item {
+    min-width: 45%;
+    margin-bottom: 8px;
+  }
+  .stat-value { font-size: 1.4rem; }
+}

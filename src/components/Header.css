@@ -1,0 +1,163 @@
+:root{
+  --accent: #e11d48;
+  --header-height: 72px;
+}
+
+.site-header { position: relative; z-index: 50; }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  padding: 1px 28px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  /* Added opacity to transition - Slower fade as requested */
+  transition: transform 1000ms cubic-bezier(0.2, 0.8, 0.2, 1), 
+              background-color 800ms ease, 
+              box-shadow 800ms ease, 
+              opacity 1000ms ease;
+  z-index: 1200;
+  
+}
+
+.navbar.transparent {
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+.navbar.solid {
+  background: rgba(233, 231, 231, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: #0f1724;
+  box-shadow: 0 8px 30px rgba(15,23,42,0.08), 0 0 60px rgba(225,29,72,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* show/hide with fade */
+.navbar.hide { 
+  transform: translateY(-80%); 
+  opacity: 0;
+  pointer-events: none;
+}
+.navbar.show { 
+  transform: translateY(0); 
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* left and right groups */
+.nav-left, .nav-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* left group aligns right so center logo stays centered */
+.nav-left { justify-content: flex-end; }
+.nav-right { justify-content: flex-start; }
+
+/* center brand */
+.nav-center { display: flex; justify-content: center; align-items: center; }
+
+.brand { display:inline-block; }
+.logo {
+  height: 44px;
+  display: block;
+  transition: transform 300ms ease, filter 300ms ease;
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.logo:hover {
+  transform: scale(1.05) rotate(2deg);
+  filter: brightness(1.1) drop-shadow(0 4px 12px rgba(225,29,72,0.15));
+}
+
+/* links style - white on transparent, dark on solid */
+.navbar.transparent a { color: #ffffff; }
+.navbar.solid a { color: #0f1724; }
+
+.navbar a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 6px;
+  position: relative;
+  transition: color 200ms ease, transform 200ms ease;
+  border-radius: 6px;
+}
+
+.navbar a:hover {
+  transform: translateY(-1px);
+}
+
+/* animated underline */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), rgba(225,29,72,0.5));
+  transition: width 300ms ease, left 300ms ease;
+  border-radius: 1px;
+}
+.navbar a:hover::after,
+.navbar a:focus::after {
+  width: 100%;
+  left: 0;
+}
+
+/* download button */
+.download-btn {
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--accent), #ff7a86 95%);
+  color: white;
+  box-shadow: 0 8px 26px rgba(225,29,72,0.16), 0 0 40px rgba(225,29,72,0.1);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 500ms ease;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(225,29,72,0.2), 0 0 60px rgba(225,29,72,0.15);
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* responsive */
+@media (max-width: 880px) {
+  .navbar { padding: 8px 14px; gap: 8px; height: calc(var(--header-height) - 8px); }
+  .nav-left, .nav-right { gap: 10px; }
+  .download-btn { display: none; } /* hide on small */
+}
+
+/* accessibility focus outlines - removed red ring as requested */
+.navbar a:focus, .download-btn:focus { outline: none; }

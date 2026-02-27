@@ -1,0 +1,226 @@
+/* ============================================
+   GLOBAL RESET
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: #000;
+}
+
+:root {
+  --accent: #e11d48;
+  --muted: #6b7280;
+  --max-width: 1100px;
+}
+
+/* ============================================
+   HOME CONTAINER
+   ============================================ */
+.home-container {
+    width: 100%;
+    position: relative;
+}
+
+/* ============================================
+   1. STICKY GALLERY SECTION
+   This takes up 100vh height in the flow.
+   It sticks to the top when scrolling starts.
+   ============================================ */
+.gallery-section {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   2. CONTENT SECTION
+   This follows immediately after the gallery in flow.
+   It has white background to cover the gallery.
+   ============================================ */
+.content-section {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    /* Add shadow for nice overlap effect */
+    box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+}
+
+/* ============================================
+   HERO / VISION STYLES
+   ============================================ */
+.hero-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vision-section {
+    min-height: 100vh; /* Ensure at least full screen */
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.person-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.vision-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh; /* Match section height */
+}
+
+.vision-image-col {
+    position: relative;
+    height: 100%;
+    background: #f3f4f6;
+    overflow: hidden;
+}
+
+.vision-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+}
+
+.vision-content-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    background: #fff;
+    color: #111;
+}
+
+/* Typography & Components */
+.ceo-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+}
+.ceo-name { font-weight: 700; color: #111; }
+.ceo-sep { color: var(--accent); }
+.ceo-title { font-weight: 400; color: #6b7280; }
+
+.vision-heading {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.vision-heading::after {
+    content: '';
+    height: 1px;
+    width: 40px;
+    background: var(--accent);
+    display: block;
+}
+
+.vision-subheading {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: #111;
+    margin-bottom: 24px;
+    font-weight: 300;
+    font-family: 'Outfit', 'Inter', sans-serif;
+}
+
+.vision-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 30px;
+    max-width: 650px;
+    font-weight: 300;
+}
+
+.know-more {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.know-more:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ============================================
+   BUSINESS SECTION
+   ============================================ */
+.business-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    padding: 60px 0;
+}
+
+.businesses {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 8px;
+    color: #111;
+}
+
+.card-scroll-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 0 5%;
+    width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 880px) {
+    .vision-split-layout { grid-template-columns: 1fr; height: auto; }
+    .vision-image-col { height: 400px; }
+    .vision-content-col { padding: 40px 20px; }
+}
+
+@media (max-width: 768px) {
+    .card-scroll-container { grid-template-columns: 1fr; }
+}

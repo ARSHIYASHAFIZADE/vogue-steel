@@ -1,0 +1,19 @@
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f1724; /* Match footer background to seamless look */
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #0f1724; /* Ensure overscroll is also dark */
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
